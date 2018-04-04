@@ -26,23 +26,21 @@ const server = http.createServer((req, res) => {
   var url_filename = url_pathname[url_pathname.length - 1];
   var url_filenametype = url_filename.split(".");
   if (url_filenametype[1].toUpperCase() == "SVG") {
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "image/svg+xml");
     var symbol = new ms.Symbol(
       url_filenametype[0],
       Object.assign({}, url_parts.query)
     ).asSVG();
-    res.statusCode = 200;
-    res.setHeader("Content-Type", "image/svg+xml");
     res.end(symbol);
   }
   if (url_filenametype[1].toUpperCase() == "PNG") {
     res.statusCode = 200;
     res.setHeader("Content-Type", "image/png");
-    //var symbol =
     new ms.Symbol(url_filenametype[0], Object.assign({}, url_parts.query))
       .asNodeCanvas()
       .pngStream()
       .pipe(res);
-    //res.end();
   }
 });
 
