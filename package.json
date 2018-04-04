@@ -1,0 +1,23 @@
+{
+  "name": "milsymbol-server",
+  "version": "0.1.0",
+  "description": "Milsymbol based military symbol server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spatialillusions/milsymbol-server.git"
+  },
+  "author": "Måns Beckman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spatialillusions/milsymbol-server/issues"
+  },
+  "homepage": "https://github.com/spatialillusions/milsymbol-server#readme",
+  "dependencies": {
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "milsymbol": "^2.0.0-rc1"
+  }
+}
