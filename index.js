@@ -48,6 +48,6 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, hostname, () => {
   console.log(
-    `Try out the symbol server: http://${hostname}:${port}/?sidc=SFG-UCI----D&size=50`
+    `Try out the symbol server: http://${hostname}:${port}/SFG-UCI---.png`
   );
 });

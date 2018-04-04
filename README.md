@@ -14,6 +14,7 @@ node index.js
 
 When the server is up and running, you can try it out by navigating to:
 
-http://127.0.0.1:3000/?sidc=SFG-UCI----D&size=50
+http://${hostname}:${port}/SFG-UCI---.png or
+http://${hostname}:${port}/SFG-UCI---.svg
 
 _You can add any milsymbol options to the query string_
