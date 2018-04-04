@@ -15,6 +15,9 @@ node index.js
 When the server is up and running, you can try it out by navigating to:
 
 http://${hostname}:${port}/SFG-UCI---.png or
+
 http://${hostname}:${port}/SFG-UCI---.svg
 
 _You can add any milsymbol options to the query string_
+
+SFG-UCI---.png?uniqueDesignation=BA01&square=true
