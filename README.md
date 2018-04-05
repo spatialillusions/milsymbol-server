@@ -1,10 +1,12 @@
 ## Milsymbol in Node.js
 
-This is an example of how you can create a minimal military symbol server using
-Node.js and milsymbol.
+![milsymbol-server](https://raw.githubusercontent.com/spatialillusions/milsymbol-server/master/milsymbol-server.png?raw=true)
 
-_You should not run this server in a production environment without adding error
-handling and input checks._
+This is an example of how you can create a minimal military symbol server using Node.js and milsymbol.
+
+It supports output of military symbols as **SVG** and as **PNG**, you can use all options available for milsymbol to add modifiers for your symbols as well.
+
+_At the moment you should not run this server in a production environment without adding error handling and input checks._
 
 To start the server, navigate to this folder in a terminal and run:
 
@@ -12,12 +14,12 @@ To start the server, navigate to this folder in a terminal and run:
 node index.js
 ```
 
-When the server is up and running, you can try it out by navigating to:
+The symbols are named **SIDC**.**FILETYPE**, and you can access them using:
 
-http://${hostname}:${port}/SFG-UCI---.png or
+http://${hostname}:${port}/SFG-UCI---.png *or*
 
 http://${hostname}:${port}/SFG-UCI---.svg
 
-_You can add any milsymbol options to the query string_
+You can add any milsymbol options to the query string
 
 SFG-UCI---.png?uniqueDesignation=BA01&square=true
