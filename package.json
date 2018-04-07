@@ -1,6 +1,6 @@
 {
   "name": "milsymbol-server",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Milsymbol based military symbol server",
   "main": "index.js",
   "scripts": {

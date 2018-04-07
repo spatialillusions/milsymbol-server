@@ -6,8 +6,6 @@ This is an example of how you can create a minimal military symbol server using 
 
 It supports output of military symbols as **SVG** and as **PNG**, you can use all options available for milsymbol to add modifiers for your symbols as well.
 
-_At the moment you should not run this server in a production environment without adding error handling and input checks._
-
 To start the server, navigate to this folder in a terminal and run:
 
 ```
@@ -16,7 +14,7 @@ node index.js
 
 The symbols are named **SIDC**.**FILETYPE**, and you can access them using:
 
-http://${hostname}:${port}/SFG-UCI---.png *or*
+http://${hostname}:${port}/SFG-UCI---.png _or_
 
 http://${hostname}:${port}/SFG-UCI---.svg
 
