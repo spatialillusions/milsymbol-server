@@ -24,6 +24,19 @@ ms.Symbol.prototype.asNodeCanvas = function() {
   return canvas;
 };
 
+// Make sure only milsymbol options are set in the query string
+const a = new ms.Symbol();
+const validation = Object.assign(a.options, a.style);
+function query2object(props) {
+  var obj = {};
+  for (let key in props) {
+    if (validation.hasOwnProperty(key)) {
+      obj[key] = props[key];
+    }
+  }
+  return obj;
+}
+
 const server = http.createServer((req, res) => {
   var url_parts = url.parse(req.url, true);
   var url_pathname = url_parts.pathname.split("/");
@@ -34,7 +47,7 @@ const server = http.createServer((req, res) => {
     res.setHeader("Content-Type", "image/svg+xml");
     var symbol = new ms.Symbol(
       url_filenametype[0],
-      Object.assign({}, url_parts.query)
+      query2object(url_parts.query)
     ).asSVG();
     res.end(symbol);
     return;
@@ -42,7 +55,7 @@ const server = http.createServer((req, res) => {
   if (url_filenametype[1].toUpperCase() == "PNG") {
     res.statusCode = 200;
     res.setHeader("Content-Type", "image/png");
-    new ms.Symbol(url_filenametype[0], Object.assign({}, url_parts.query))
+    new ms.Symbol(url_filenametype[0], query2object(url_parts.query))
       .asNodeCanvas()
       .pngStream()
       .pipe(res);
