@@ -50,6 +50,8 @@ const server = http.createServer((req, res) => {
   }
   res.statusCode = 404;
   res.end("404 Not found");
+  console.log("Invalid request: " + req.url);
+  return;
 });
 
 server.listen(port, hostname, () => {
