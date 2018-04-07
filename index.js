@@ -7,9 +7,13 @@ const hostname = "127.0.0.1";
 const port = 3000;
 
 ms.Symbol.prototype.asNodeCanvas = function() {
-  ms._brokenPath2D = true;
+  const MAX_SIZE = 2000; // Maximum width/hight for the canvas to aviod out of memory
+  ms._brokenPath2D = true; // Make it use our custom polyfill for Path2D
   const ratio = 1;
-  const canvas = new Canvas(this.width, this.height);
+  const canvas = new Canvas(
+    Math.min(this.width, MAX_SIZE),
+    Math.min(this.height, MAX_SIZE)
+  );
   const ctx = canvas.getContext("2d");
   ctx.scale(ratio * this.style.size / 100, ratio * this.style.size / 100);
   ctx.translate(
