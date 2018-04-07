@@ -37,6 +37,7 @@ const server = http.createServer((req, res) => {
       Object.assign({}, url_parts.query)
     ).asSVG();
     res.end(symbol);
+    return;
   }
   if (url_filenametype[1].toUpperCase() == "PNG") {
     res.statusCode = 200;
@@ -45,7 +46,10 @@ const server = http.createServer((req, res) => {
       .asNodeCanvas()
       .pngStream()
       .pipe(res);
+    return;
   }
+  res.statusCode = 404;
+  res.end("404 Not found");
 });
 
 server.listen(port, hostname, () => {
