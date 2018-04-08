@@ -1,4 +1,4 @@
-## Using a smaller image like Apline does
+## Using a smaller image like Alpine does
 ## not work because of missing dependencies
 ## to libpng
 FROM node:8
