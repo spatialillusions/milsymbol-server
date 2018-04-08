@@ -18,6 +18,14 @@ To start the server, navigate to this folder in a terminal and run:
 node index.js
 ```
 
+Docker Container:
+
+milsymbol-server is also available from Docker Hub. In order to run the server as a daemon and map the exposed port to your host just run
+
+```
+docker run -d -p 3000:3000 spatialillusions/milsymbol-server:1.0.0
+```
+
 The symbols are named **SIDC**.**FILETYPE**, and you can access them using:
 
 http://${hostname}:${port}/SFG-UCI---.png _or_

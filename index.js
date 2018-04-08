@@ -1,9 +1,11 @@
 // Minimal military symbol server using nodejs and milsymbol
+const os = require('os');
 const http = require("http");
 const ms = require("milsymbol");
 const Canvas = require("canvas-prebuilt"); // switch to canvas when node-pre-gyp follows redirects
 const url = require("url");
-const hostname = "127.0.0.1";
+const hostname = os.hostname()
+const bindAddress = process.env.BIND_ADDRESS || "0.0.0.0"
 const port = 3000;
 
 ms.Symbol.prototype.asNodeCanvas = function() {
@@ -67,7 +69,7 @@ const server = http.createServer((req, res) => {
   return;
 });
 
-server.listen(port, hostname, () => {
+server.listen(port, bindAddress, () => {
   console.log(
     `Try out the symbol server: http://${hostname}:${port}/SFG-UCI---.png`
   );
