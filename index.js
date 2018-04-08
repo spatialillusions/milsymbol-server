@@ -1,11 +1,11 @@
 // Minimal military symbol server using nodejs and milsymbol
-const os = require('os');
+const os = require("os");
 const http = require("http");
 const ms = require("milsymbol");
 const Canvas = require("canvas-prebuilt"); // switch to canvas when node-pre-gyp follows redirects
 const url = require("url");
-const hostname = os.hostname()
-const bindAddress = process.env.BIND_ADDRESS || "0.0.0.0"
+const hostname = os.hostname();
+const bindAddress = process.env.BIND_ADDRESS || "0.0.0.0";
 const port = 3000;
 
 ms.Symbol.prototype.asNodeCanvas = function() {
@@ -33,7 +33,11 @@ function query2object(props) {
   var obj = {};
   for (let key in props) {
     if (validation.hasOwnProperty(key)) {
-      obj[key] = props[key];
+      if (typeof validation[key] == "boolean") {
+        obj[key] = props[key].toUpperCase() == "TRUE";
+      } else {
+        obj[key] = props[key];
+      }
     }
   }
   return obj;
