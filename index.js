@@ -36,7 +36,11 @@ function query2object(props) {
       if (typeof validation[key] == "boolean") {
         obj[key] = props[key].toUpperCase() == "TRUE";
       } else {
-        obj[key] = props[key];
+        if (typeof validation[key] == "number") {
+          obj[key] = Number(props[key]);
+        } else {
+          obj[key] = props[key];
+        }
       }
     }
   }
