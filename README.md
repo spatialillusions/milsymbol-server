@@ -1,6 +1,6 @@
 ## Milsymbol in Node.js
 
-![milsymbol-server](https://raw.githubusercontent.com/spatialillusions/milsymbol-server/master/milsymbol-server.png?raw=true)
+![milsymbol-server](https://raw.githubusercontent.com/spatialillusions/milsymbol-server/master/milsymbol-server.png)
 
 This is an example of how you can create a minimal military symbol server using Node.js and milsymbol.
 
