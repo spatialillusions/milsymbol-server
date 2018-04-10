@@ -23,7 +23,7 @@ Docker Container:
 milsymbol-server is also available from Docker Hub. In order to run the server as a daemon and map the exposed port to your host just run
 
 ```
-docker run -d -p 3000:3000 spatialillusions/milsymbol-server:1.0.0
+docker run -d -p 2525:2525 spatialillusions/milsymbol-server:1.0.0
 ```
 
 The symbols are named **SIDC**.**FILETYPE**, and you can access them using:
