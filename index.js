@@ -6,7 +6,7 @@ const Canvas = require("canvas-prebuilt"); // switch to canvas when node-pre-gyp
 const url = require("url");
 const hostname = os.hostname();
 const bindAddress = process.env.BIND_ADDRESS || "0.0.0.0";
-const port = 3000;
+const port = 2525; // Because MIL-STD-2525 :-)
 
 ms.Symbol.prototype.asNodeCanvas = function() {
   const MAX_SIZE = 2000; // Maximum width/hight for the canvas to aviod out of memory
