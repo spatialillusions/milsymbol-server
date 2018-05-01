@@ -20,7 +20,13 @@ node index.js
 
 Docker Container:
 
-milsymbol-server is also available from Docker Hub. In order to run the server as a daemon and map the exposed port to your host just run
+milsymbol-server will be available from Docker Hub, but at the moment you will have to build the server by your self by running
+
+```
+docker build -t spatialillusions/milsymbol-server:1.0.0 .
+```
+
+In order to run the server as a daemon and map the exposed port to your host just run
 
 ```
 docker run -d -p 2525:2525 spatialillusions/milsymbol-server:1.0.0
