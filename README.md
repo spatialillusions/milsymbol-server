@@ -41,3 +41,13 @@ http://${hostname}:${port}/SFG-UCI---.svg
 You can add any milsymbol options to the query string
 
 SFG-UCI---.png?uniqueDesignation=BA01&square=true
+
+## Public test server
+
+Thanks to the wonderful people at [syncpoint.io](https://syncpoint.io) there is a public server that you can try out at:
+
+https://milsymbol-server.syncpoint.io/
+
+Here is a sample URL that you can try out:
+
+https://milsymbol-server.syncpoint.io/SFGPEXL-----.svg?uniqueDesignation=MILSYMBOL&higherFormation=SYNCPOINT.IO
