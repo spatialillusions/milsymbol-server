@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/spatialillusions/milsymbol-server#readme",
   "dependencies": {
-    "canvas-prebuilt": "^1.6.5-prerelease.1",
+    "canvas": "^2.6",
     "milsymbol": "^2.0.0-rc2"
   }
 }
