@@ -2,7 +2,7 @@
 const os = require("os");
 const http = require("http");
 const ms = require("milsymbol");
-const Canvas = require("canvas-prebuilt"); // switch to canvas when node-pre-gyp follows redirects
+const { createCanvas } = require('canvas');
 const url = require("url");
 const hostname = os.hostname();
 const bindAddress = process.env.BIND_ADDRESS || "0.0.0.0";
@@ -12,10 +12,7 @@ ms.Symbol.prototype.asNodeCanvas = function() {
   const MAX_SIZE = 2000; // Maximum width/hight for the canvas to aviod out of memory
   ms._brokenPath2D = true; // Make it use our custom polyfill for Path2D
   const ratio = 1;
-  const canvas = new Canvas(
-    Math.min(this.width, MAX_SIZE),
-    Math.min(this.height, MAX_SIZE)
-  );
+  const canvas = new createCanvas( Math.min(this.width, MAX_SIZE), Math.min(this.height, MAX_SIZE)  );
   const ctx = canvas.getContext("2d");
   ctx.scale(ratio * this.style.size / 100, ratio * this.style.size / 100);
   ctx.translate(
